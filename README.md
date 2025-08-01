@@ -38,26 +38,26 @@ M3U播放列表管理器是一个功能强大的命令行工具，能够扫描�
 
 1. **下载项目文件**
    ```bash
-   # 确保music.py文件在当前目录
-   ls music.py
+   # 确保m3u_weaver.py文件在当前目录
+   ls m3u_weaver.py
    ```
 
 2. **运行程序（多种方式）**
    ```bash
    # 使用默认配置
-   python3 music.py
+   python3 m3u_weaver.py
    
    # 指定音乐目录
-   python3 music.py -d /Users/song/Music
+   python3 m3u_weaver.py -d /Users/song/Music
    
    # 交互式配置音乐目录
-   python3 music.py --config
+   python3 m3u_weaver.py --config
    
    # 自定义页面大小
-   python3 music.py --page-size 30
+   python3 m3u_weaver.py --page-size 30
    
    # 查看帮助
-   python3 music.py --help
+   python3 m3u_weaver.py --help
    ```
 
 ### 🔧 配置管理
@@ -72,15 +72,15 @@ M3U播放列表管理器是一个功能强大的命令行工具，能够扫描�
 #### 命令行配置
 ```bash
 # 基本用法
-python3 music.py -d /path/to/music
+python3 m3u_weaver.py -d /path/to/music
 
 # 完整配置
-python3 music.py -d ~/Music --page-size 25
+python3 m3u_weaver.py -d ~/Music --page-size 25
 ```
 
 #### 交互式配置
 ```bash
-python3 music.py --config
+python3 m3u_weaver.py --config
 ```
 程序会引导你：
 - 输入自定义路径
@@ -98,7 +98,7 @@ python3 music.py --config
 
 #### 重置配置
 ```bash
-python3 music.py --reset-config
+python3 m3u_weaver.py --reset-config
 ```
 
 ## 🎮 操作指南
@@ -186,10 +186,12 @@ python3 music.py --reset-config
 ## 📁 文件结构
 
 ```
-music/
-├── music.py          # 主程序文件
+m3u_weaver/
+├── m3u_weaver.py     # 主程序文件
+├── music_config.json # 配置文件
 ├── playlist.m3u      # 生成的播放列表示例
-└── README.md         # 项目说明文档
+├── README.md         # 项目说明文档
+└── LICENSE           # 许可证文件
 ```
 
 ## ⚙️ 高级配置
@@ -226,14 +228,14 @@ music/
 
 ### Q: 程序提示"音乐目录不存在"？
 **A**: 有多种解决方案：
-- 使用 `python3 music.py --config` 重新配置
-- 使用 `python3 music.py -d /path/to/music` 指定正确路径
-- 使用 `python3 music.py --reset-config` 重置为默认配置
+- 使用 `python3 m3u_weaver.py --config` 重新配置
+- 使用 `python3 m3u_weaver.py -d /path/to/music` 指定正确路径
+- 使用 `python3 m3u_weaver.py --reset-config` 重置为默认配置
 
 ### Q: 如何更改默认音乐目录？
 **A**: 有以下几种方式：
-- **临时更改**：`python3 music.py -d ~/Music`
-- **永久更改**：`python3 music.py --config` 然后选择新目录
+- **临时更改**：`python3 m3u_weaver.py -d ~/Music`
+- **永久更改**：`python3 m3u_weaver.py --config` 然后选择新目录
 - **直接编辑**：修改 `music_config.json` 文件
 
 ### Q: 搜索结果为空？
@@ -255,7 +257,7 @@ music/
 3. **快速导航**：使用左右方向键比Enter键翻页更快
 4. **组合操作**：先搜索缩小范围，再选择具体歌曲
 5. **配置技巧**：
-   - 初次使用建议运行 `python3 music.py --config` 设置音乐目录
+   - 初次使用建议运行 `python3 m3u_weaver.py --config` 设置音乐目录
    - 可以为不同音乐库创建不同的配置文件
    - 使用 `--page-size` 调整每页显示数量以适应屏幕大小
 

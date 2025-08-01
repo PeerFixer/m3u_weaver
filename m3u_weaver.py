@@ -695,10 +695,10 @@ def parse_arguments():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 使用示例:
-  python3 music.py                           # 使用默认配置
-  python3 music.py -d /path/to/music         # 指定音乐目录
-  python3 music.py --config                  # 交互式配置音乐目录
-  python3 music.py -d ~/Music --page-size 30 # 自定义目录和页面大小
+  python3 m3u_weaver.py                           # 使用默认配置
+  python3 m3u_weaver.py -d /path/to/music         # 指定音乐目录
+  python3 m3u_weaver.py --config                  # 交互式配置音乐目录
+  python3 m3u_weaver.py -d ~/Music --page-size 30 # 自定义目录和页面大小
         """
     )
     
@@ -787,7 +787,7 @@ def get_music_directory(args):
             else:
                 sys.exit(1)
         elif choice == '2':
-            print("请使用: python3 music.py -d /path/to/your/music")
+            print("请使用: python3 m3u_weaver.py -d /path/to/your/music")
             sys.exit(1)
         else:
             sys.exit(1)
@@ -797,7 +797,7 @@ def get_music_directory(args):
 
 def main():
     """主函数"""
-    print("M3U播放列表管理器 v1.0")
+    print("M3U播放列表管理器 v1.1.0")
     print("=" * 40)
     
     # 解析命令行参数
